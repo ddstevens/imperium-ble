@@ -101,7 +101,7 @@ uint8_t command[256];
 void loop()
 {
   // Sleep after 5 minutes of inactivity
-  if ((millis() - lastSendTime) >= 5 * 60 * 1000) { // 5 min
+  if ((millis() - lastSendTime) >= INACTIVITY_BEFORE_SLEEP) {
     Serial.println("Going to sleep now");
     nfc->sleep();
     delay(2000);
