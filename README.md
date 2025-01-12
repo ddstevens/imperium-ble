@@ -1,6 +1,6 @@
 # imperium-ble
 
-![fightstick](images/outside.png)
-![fightstick](images/inside.png)
+![fightstick](images/outside.jpg)
+![fightstick](images/inside.jpg)
 
 Details comming soon...
