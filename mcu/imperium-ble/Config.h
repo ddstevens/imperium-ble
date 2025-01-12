@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 // ESP32S3
-#define MCU_S3
+#define MCU_S3  // or MCU_C3
 #define GP_B1     2
 #define GP_B2     3
 #define GP_UP     7
