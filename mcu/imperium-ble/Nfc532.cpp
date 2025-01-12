@@ -39,15 +39,15 @@ Nfc532::Nfc532() {}
 
 void Nfc532::start() {
   // Disable the sleep locks (if any)
-  gpio_hold_dis((gpio_num_t) NFC_RST);
+  gpio_hold_dis((gpio_num_t) NFC_RSTPDN);
   gpio_deep_sleep_hold_dis();
 
-  pinMode(NFC_RST, OUTPUT);
+  pinMode(NFC_RSTPDN, OUTPUT);
 
   // Reset the PN532 just to make sure we're in a good state
-  digitalWrite(NFC_RST, LOW);
+  digitalWrite(NFC_RSTPDN, LOW);
   delay(1000);
-  digitalWrite(NFC_RST, HIGH);
+  digitalWrite(NFC_RSTPDN, HIGH);
 
   Serial.println("NFC reader ready");
   Wire.setPins(NFC_SDA, NFC_SCL);
@@ -67,11 +67,11 @@ void Nfc532::sleep() {
   Serial.println("Sleeping the PN532");
 
   // Power down
-  digitalWrite(NFC_RST, LOW);
+  digitalWrite(NFC_RSTPDN, LOW);
 
   // Make sure we hold the pin state even in deep sleep
   gpio_deep_sleep_hold_en();
-  gpio_hold_en((gpio_num_t) NFC_RST);
+  gpio_hold_en((gpio_num_t) NFC_RSTPDN);
 }
 
 bool Nfc532::read(uint8_t* value) {
