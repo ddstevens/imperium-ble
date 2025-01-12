@@ -42,3 +42,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Debounce counter max. How many checks after a button is released before sending the release.
 #define DBC_MAX 32 // Set to 1 to disable
+
+#define DELAY_BETWEEN_CARDS 2000

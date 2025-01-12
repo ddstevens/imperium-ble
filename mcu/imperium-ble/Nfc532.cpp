@@ -26,8 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 PN532_I2C pn532_i2c(Wire);
 PN532 nfc532 = PN532(pn532_i2c);
 
-const int DELAY_BETWEEN_CARDS = 2000;
-
 unsigned long timeLastCardRead = 0;
 boolean readerDisabled = false;
 uint8_t cardState = 0;
